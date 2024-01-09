@@ -3,7 +3,6 @@ import { config } from "dotenv";
 import ErrorMiddleware from "./middlewares/Error.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
-import bodyParser from "body-parser";
 
 config({
   path: "./config/config.env",
@@ -24,8 +23,6 @@ app.use(
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-app.use(bodyParser.json({ limit: "100mb" }));
-app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 
 import course from "./routes/courseRoutes.js";
 import user from "./routes/userRoutes.js";
