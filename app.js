@@ -1,5 +1,6 @@
-import express, { urlencoded } from "express";
+import express from "express";
 import { config } from "dotenv";
+import ErrorMiddleware from "./middlewares/Error.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -27,7 +28,6 @@ import course from "./routes/courseRoutes.js";
 import user from "./routes/userRoutes.js";
 import payment from "./routes/paymentRoutes.js";
 import other from "./routes/otherRoutes.js";
-import ErrorMiddleware from "./middlewares/Error.js";
 
 app.use("/api/v1", course);
 app.use("/api/v1", user);
