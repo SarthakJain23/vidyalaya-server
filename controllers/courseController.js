@@ -78,7 +78,6 @@ export const addLecture = catchAsyncError(async (req, res, next) => {
   if (!course) return next(new ErrorHandler("Course not Found", 404));
 
   const file = req.file;
-
   const fileUri = getDataUri(file);
 
   const myCloud = await cloudinary.v2.uploader.upload(fileUri.content, {
